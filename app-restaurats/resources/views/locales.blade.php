@@ -13,6 +13,7 @@
             </div>
             @endforeach
         @endif
+        <a href="/locales/register">Registrar local</a>
     @endauth
     @guest
         <p>Para ver el contenido <a href="/login">Inicie Sesión</a></p>

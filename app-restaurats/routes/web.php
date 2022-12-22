@@ -23,9 +23,11 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home');
 
 // stars-restaurants.com/locales => restaurantes
+//--------------------------------------------------------------------------------------
 // Route::view('/locales', 'locales',['dataLocales'=>$dataLocales])->name('locales');
 Route::get('/locales',[LocalesController::class, 'metodo1'])->name('locales');
-
+Route::view('/locales/register','register_locales')->name('localesRegister');
+//--------------------------------------------------------------------------------
 // stars-restaurants.com/places => ubicacion
 Route::view('/places', 'places')->name('places');
 

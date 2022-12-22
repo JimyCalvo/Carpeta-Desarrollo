@@ -9,7 +9,7 @@
 				<a href="{{route('locales')}}" class="nav_link"> <i class='bx bx-receipt nav_icon'></i> <span class="nav_name">Locales</span> </a>
 				<a href="{{route('places')}}" class="nav_link"> <i class='bx bx-map nav_icon'></i> <span class="nav_name">Ubicaciones</span> </a>
 				<a href="{{route('seach')}}" class="nav_link"> <i class='bx bx-search nav_icon'></i> <span class="nav_name">Buscar</span> </a>
-				<a href="{{route('about')}}" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Acerca de Nosotros</span> </a>
+				<a href="{{route('about')}}" class="nav_link"> <i class='bx bx-info-circle nav_icon'></i> <span class="nav_name">Acerca de Nosotros</span> </a>
 				<a href="{{route('contact')}}" class="nav_link"> <i class='bx bx-phone nav_icon'></i> <span class="nav_name">Contactos</span> </a>
 			</div>
 		</div>
