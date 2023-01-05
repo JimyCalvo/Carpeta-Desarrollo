@@ -32,7 +32,6 @@ class RegisterRequest extends FormRequest
             'birthday'=>'nullable',
             'type_user'=>'required',
 
-
         ];
     }
 }

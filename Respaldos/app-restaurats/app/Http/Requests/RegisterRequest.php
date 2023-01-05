@@ -25,12 +25,12 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name'=>'required',
-            'lastname'=>'required',
             'email'=>'required|unique:users,email',
             'username'=>'required|unique:users,username',
             'password'=>'required|min:8',
             'password_confirmation'=>'required|same:password',
-            'is_enabled'=>'nullable',
+            'birthday'=>'nullable',
+            'type_user'=>'required',
 
         ];
     }

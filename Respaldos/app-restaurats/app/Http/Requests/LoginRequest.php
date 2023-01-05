@@ -15,7 +15,7 @@ class LoginRequest extends FormRequest
             'password'=>'required'
         ];
     }
-    public function gerCredentials(){
+    public function getCredentials(){
         $username = $this->get('username'); //<-- Obteción del valor input
         if($this->isEmail($username)){
             return[
@@ -25,7 +25,7 @@ class LoginRequest extends FormRequest
         }
         return $this->only('username','password');
     }
-    /// Validacio del formato de Email
+    /// Validacion del formato de Email
     public function isEmail($value2){
         $validador=$this->container->make(ValidationFactory::class);
         return !$validador->make(['username'=>$value2],['username'=>'email'])->fails();

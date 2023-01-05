@@ -2,10 +2,11 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocalesController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RestauranteVisitantesController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -26,21 +27,27 @@ Route::view('/', 'home');
 //--------------------------------------------------------------------------------------
 // Route::view('/locales', 'locales',['dataLocales'=>$dataLocales])->name('locales');
 Route::get('/locales',[LocalesController::class, 'metodo1'])->name('locales');
-Route::view('/locales/register','register_locales')->name('localesRegister');
+Route::view('/locales/register','locales.register_locales')->name('localesRegister');
 //--------------------------------------------------------------------------------
 // stars-restaurants.com/places => ubicacion
-Route::view('/places', 'places')->name('places');
+Route::view('/places', 'places.places')->name('places');
 
 // stars-restaurants.com/about => acerca
-Route::view('/about', 'about')->name('about');
+Route::view('/about', 'about.about')->name('about');
 
 // stars-restaurants.com/contact => contactos
-Route::view('/contact', 'contacts')->name('contact');
+Route::view('/contact', 'contact.contacts')->name('contact');
 
 // stars-restaurants.com/seach => buscar
-Route::get('/seach', function () {
-    return view('seach');
-})->name('seach');
+// Route::get('/seach', function () {
+//     return view('search.seach');
+// })->name('seach');
+Route::get('restaurante',[RestauranteVisitantesController::class, 'index'])->name('seach');
+Route::resource('locales', RestauranteVisitantesController::class,[
+    'names' =>  'restaurantes',
+    'parameters' => ['restaurantes'=>'restaurante']
+ ]
+);
 
 
 //----------------------------------------------------------------

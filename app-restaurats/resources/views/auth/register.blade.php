@@ -2,6 +2,7 @@
     <h3>Registrar</h3>
     <form class="container pe-5 ps-5 me-5 ms-2 text-center"action="/register" method="POST">
         @csrf
+        <x-layouts.partials.messages class="container"/>
         <input type="text" placeholder="Nombre" name="name" class="form-control mb-3">
         <input type="email" placeholder="Correo Electronico" name="email" class="form-control mb-3">
         <input type="text" placeholder="Nombre de Usuario" name="username" class="form-control mb-2">

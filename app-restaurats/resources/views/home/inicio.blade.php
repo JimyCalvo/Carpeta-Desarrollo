@@ -3,7 +3,21 @@
     <section>
         <div>
             @auth
-                <h5>Bievenido {{auth()->user()->name}}  {{auth()->user()->lastname}}</h5>
+                <h5>Bievenido {{auth()->user()->name}} </h5>
+                @switch(auth()->user()->type_user)
+                    @case("Administrador")
+                        <h5> Administrador </h5>
+                        @break
+                    @case("Cliente")
+                        <h5> Cliente </h5>
+                        @break
+                    @case("Afiliado")
+                        <h5>Afiliado</h5>
+                        @break
+                    @default
+                        
+                        @break
+                @endswitch
             @endauth
         </div>
     </section>
@@ -25,7 +39,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nemo, voluptate nulla illum, labore possimus soluta veniam</p> 
                                     </div>
                                 </div>
-                                <div class="carousel-item"> 
+                                <div class="carousel-item">
                                     <img src="https://www.clarin.com/img/2021/06/17/LC25eDtCT_1200x630__1.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block" style="background-color: rgba(12, 12, 12, 0.596); height=500px;">
                                         <h5>PoliBurger</h5>

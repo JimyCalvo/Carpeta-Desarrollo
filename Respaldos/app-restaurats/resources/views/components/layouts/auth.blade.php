@@ -25,8 +25,14 @@
     <x-layouts.navbar/>
     <div class="height-100">
         <main>
-            <div class="container m-5 p-5 text-center" >
-                {{$slot}}
+            <div class="row text-center">
+                <div class="d-none d-sm-block col-sm-1 col-md-2 col-lg-3"></div>
+                <div class="col-sm-10 col-md-8 col-lg-6">
+                    <div class="container" >
+                        {{$slot}}
+                    </div>
+                </div>
+                <div class=" d-none d-sm-block col-sm-1 col-md-2 col-lg-3"></div>
             </div>
         </main>
         <hr>

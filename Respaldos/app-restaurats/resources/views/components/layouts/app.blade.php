@@ -38,7 +38,6 @@
         </main>
         <br>
         <br>
-        <hr>
         <x-layouts.footer/>
         
     </div>
