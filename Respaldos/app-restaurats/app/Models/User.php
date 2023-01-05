@@ -19,11 +19,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lastname',
         'email',
         'username',
+        'telf',
         'password',
-        'birthday',
-        'type_user',
+        'is_enabled',
     ];
 
     /**
@@ -43,7 +44,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'birthday'=>'date'
     ];
     
     public function setPasswordAttribute($value){
